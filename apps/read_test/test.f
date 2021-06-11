@@ -1,16 +1,16 @@
       PROGRAM READER
       IMPLICIT NONE
       
-      REAL :: N1, N2, RESULT
+      REAL, DIMENSION(30):: DATA_1
+      REAL, DIMENSION(30):: DATA_2
+      INTEGER :: I
 
       PRINT *,"Reader Program"
 
+      DO I =1,5
+       DATA_1(I)=1
+      END DO
 
-      N1=1
-      N2=2
-
-      RESULT=N1+N2
-
-      PRINT *, RESULT
+      PRINT *, DATA_1
 
       END PROGRAM READER
