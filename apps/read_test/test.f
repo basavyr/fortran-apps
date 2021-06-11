@@ -40,10 +40,14 @@
 
 
       !TEST THE READING PROCEDURE BY PRINTING THE EXPERIMENTAL DATA TO THE SCREEN
-
       PRINT *, "*********** DATA_1 ***********"
       DO I=1,DIM_1
         PRINT *,  I,DATA_1(I)
+      END DO
+
+      PRINT *, "*********** DATA_2 ***********"
+      DO I=1,DIM_2
+        PRINT *,  I,DATA_2(I)
       END DO
 
       END PROGRAM READER
