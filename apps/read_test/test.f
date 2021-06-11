@@ -5,7 +5,8 @@
       !Store data from first file and the second file
       REAL, DIMENSION(30):: DATA_1,DATA_2
 
-      REAL, DIMENSION(5) :: F_DATA
+      REAL, DIMENSION(5) :: SEGMENT1,SEGMENT2,SEGMENT3
+      REAL, DIMENSION(3) :: SEGMENT0
 
 
       !Size of the two arrays
@@ -19,7 +20,10 @@
 
       !F_DATA = (/4.243, 5.058,5.870,6.748,7.565,8.500,9.546,10.665,11.871,13.159,14.509,15.895,17.325,18.805,20.381,22.029,23.820,25.794 /)
 
-      F_DATA = (/4.243, 5.058,5.870,6.748,7.565 /)
+      SEGMENT1 = (/4.243, 5.058,5.870,6.748,7.565 /)
+      SEGMENT2 = (/8.500, 9.546,10.665,11.871,13.159 /)
+      SEGMENT3 = (/14.509, 15.895,17.325,18.805,20.381 /)
+      SEGMENT0 = (/22.029, 23.820,25.794 /)
 
       PRINT *,"Reader Program"
 
@@ -38,7 +42,7 @@
 
       !Read the data from the second file -> BA120M.DAT
       DO I=1,5
-        WRITE(FD_2,*) F_DATA(I)
+        WRITE(FD_2,*) SEGMENT1(I)
       END DO
       !Close the descriptor of the second file
       CLOSE(FD_2)
