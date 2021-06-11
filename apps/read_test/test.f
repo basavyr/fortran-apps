@@ -5,9 +5,6 @@
       !Store data from first file and the second file
       REAL, DIMENSION(30):: DATA_1,DATA_2
 
-      REAL, DIMENSION(5) :: SEGMENT1,SEGMENT2,SEGMENT3
-      REAL, DIMENSION(3) :: SEGMENT0
-
 
       !Size of the two arrays
       INTEGER :: DIM_1=17,DIM_2=18
@@ -17,13 +14,6 @@
       
       !Iterator
       INTEGER :: I
-
-      !F_DATA = (/4.243, 5.058,5.870,6.748,7.565,8.500,9.546,10.665,11.871,13.159,14.509,15.895,17.325,18.805,20.381,22.029,23.820,25.794 /)
-
-      SEGMENT1 = (/4.243, 5.058,5.870,6.748,7.565 /)
-      SEGMENT2 = (/8.500, 9.546,10.665,11.871,13.159 /)
-      SEGMENT3 = (/14.509, 15.895,17.325,18.805,20.381 /)
-      SEGMENT0 = (/22.029, 23.820,25.794 /)
 
       PRINT *,"Reader Program"
 
@@ -39,35 +29,13 @@
 
       !Open the second file
       OPEN(FD_2,FILE='BA120M.DAT',STATUS='OLD')
-
-      !Write segmented data into the second file -> BA120M.DAT
       
-      !Write segment1
-      DO I=1,5
-        WRITE(FD_2,*) SEGMENT1(I)
+      !Read the content from the second file -> BA120M.DAT
+      DO I=1,DIM_2
+        READ(FD_2,*) DATA_2(I)
       END DO
 
-      !Write segment2
-      DO I=1,5
-        WRITE(FD_2,*) SEGMENT2(I)
-      END DO
-
-      !Write segment3
-      DO I=1,5
-        WRITE(FD_2,*) SEGMENT3(I)
-      END DO
-
-      !Write segment0
-      DO I=1,3
-        WRITE(FD_2,*) SEGMENT0(I)
-      END DO
-      
       !Close the descriptor of the second file
       CLOSE(FD_2)
-
-
-      !DO I=1,DIM_1
-      ! PRINT *, I, DATA_1(I)
-      !END DO
 
       END PROGRAM READER
