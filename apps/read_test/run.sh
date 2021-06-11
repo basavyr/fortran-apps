@@ -1,2 +1,3 @@
-gfortran test.f
+gfortran reader.f
 ./a.out
+rm a.out
