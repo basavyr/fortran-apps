@@ -38,4 +38,12 @@
       !Close the descriptor of the second file
       CLOSE(FD_2)
 
+
+      !TEST THE READING PROCEDURE BY PRINTING THE EXPERIMENTAL DATA TO THE SCREEN
+
+      PRINT *, "*********** DATA_1 ***********"
+      DO I=1,DIM_1
+        PRINT *,  I,DATA_1(I)
+      END DO
+
       END PROGRAM READER
