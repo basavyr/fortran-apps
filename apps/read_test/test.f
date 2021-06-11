@@ -5,6 +5,9 @@
       !Store data from first file and the second file
       REAL, DIMENSION(30):: DATA_1,DATA_2
 
+      REAL, DIMENSION(5) :: F_DATA
+
+
       !Size of the two arrays
       INTEGER :: DIM_1=17,DIM_2=18
       
@@ -13,6 +16,10 @@
       
       !Iterator
       INTEGER :: I
+
+      !F_DATA = (/4.243, 5.058,5.870,6.748,7.565,8.500,9.546,10.665,11.871,13.159,14.509,15.895,17.325,18.805,20.381,22.029,23.820,25.794 /)
+
+      F_DATA = (/4.243, 5.058,5.870,6.748,7.565 /)
 
       PRINT *,"Reader Program"
 
@@ -25,6 +32,16 @@
       END DO
       !Close the descriptor of the first file
       CLOSE(FD_1)
+
+      !Open the second file
+      OPEN(FD_2,FILE='BA120M.DAT',STATUS='OLD')
+
+      !Read the data from the second file -> BA120M.DAT
+      DO I=1,5
+        WRITE(FD_2,*) F_DATA(I)
+      END DO
+      !Close the descriptor of the second file
+      CLOSE(FD_2)
 
 
       DO I=1,DIM_1
