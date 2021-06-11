@@ -12,6 +12,14 @@
       OPEN(FD_1,FILE='BA120P.dat',STATUS='OLD')
 
       ! Reading the data from first file -> BA120P.DAT
+      !DO I=1,DIM_1
+       ! WRITE(FD_1,*) I,SIN(I+0.1)
+      !END DO
+
+      !CLOSE(FD_1)
+      
+      OPEN(FD_1,FILE='BA120P.dat',STATUS='OLD')
+      
       DO I=1,DIM_1
         READ(FD_1,*) DATA_1(I)
       END DO
