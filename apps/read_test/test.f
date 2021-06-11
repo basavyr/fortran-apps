@@ -2,17 +2,15 @@
       IMPLICIT NONE
       
       !Arrays for storing the experimental data from the two input files
-      !Store data from first file and the second file
       REAL, DIMENSION(30):: DATA_1,DATA_2
-
 
       !Size of the two arrays
       INTEGER :: DIM_1=17,DIM_2=18
       
-      !Labels for the file descriptors that are used for opening and closing files: Must be integers
+      !Labels for the file descriptors that are used for opening, reading, and closing the files: Must be integers
       INTEGER :: FD_1=20,FD_2=21
       
-      !Iterator
+      !Iterator used within the application
       INTEGER :: I
 
       PRINT *,"Reader Program"
