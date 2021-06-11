@@ -51,13 +51,18 @@
       DO I=1,5
         WRITE(FD_2,*) SEGMENT2(I)
       END DO
+
+      !Write segment3
+      DO I=1,5
+        WRITE(FD_2,*) SEGMENT3(I)
+      END DO
       
       !Close the descriptor of the second file
       CLOSE(FD_2)
 
 
-      DO I=1,DIM_1
-       PRINT *, I, DATA_1(I)
-      END DO
+      !DO I=1,DIM_1
+      ! PRINT *, I, DATA_1(I)
+      !END DO
 
       END PROGRAM READER
