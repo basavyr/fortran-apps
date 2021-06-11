@@ -4,23 +4,20 @@
       REAL, DIMENSION(30):: DATA_1
       REAL, DIMENSION(30):: DATA_2
       INTEGER :: I
+      INTEGER :: FD_1=20,FD_2=21
 
       PRINT *,"Reader Program"
 
-      DO I =1,17
-       DATA_1(I)=1
+      OPEN(FD_1,FILE='BA120P.DAT',STATUS='OLD')
+
+      DO I=1,3
+        READ(FD_1,*) DATA_1(I)
       END DO
 
-      OPEN(1,FILE='DATA1.DAT',STATUS='OLD')
+      CLOSE(FD_1)
 
-      DO I=1,17
-        WRITE(1,*) DATA_1(I)
-      END DO
-
-      CLOSE(1)
-
-      DO I=1,17
-        PRINT *, I, DATA_1(I), 2*SIN(DATA_1(I))
+      DO I=1,3
+       PRINT *, I, DATA_1(I)
       END DO
 
       END PROGRAM READER
