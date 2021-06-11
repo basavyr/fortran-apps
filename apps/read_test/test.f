@@ -56,6 +56,11 @@
       DO I=1,5
         WRITE(FD_2,*) SEGMENT3(I)
       END DO
+
+      !Write segment0
+      DO I=1,3
+        WRITE(FD_2,*) SEGMENT0(I)
+      END DO
       
       !Close the descriptor of the second file
       CLOSE(FD_2)
