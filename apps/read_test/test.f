@@ -40,10 +40,18 @@
       !Open the second file
       OPEN(FD_2,FILE='BA120M.DAT',STATUS='OLD')
 
-      !Read the data from the second file -> BA120M.DAT
+      !Write segmented data into the second file -> BA120M.DAT
+      
+      !Write segment1
       DO I=1,5
         WRITE(FD_2,*) SEGMENT1(I)
       END DO
+
+      !Write segment2
+      DO I=1,5
+        WRITE(FD_2,*) SEGMENT2(I)
+      END DO
+      
       !Close the descriptor of the second file
       CLOSE(FD_2)
 
